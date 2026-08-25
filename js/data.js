@@ -18,7 +18,7 @@ window.PORTFOLIO_DATA = {
       },
       {
         name: "GitHub",
-        url: "https://github.com/itsekiri-tatashe",
+        url: "https://github.com/eyim0fe",
         icon: "github",
       },
       { name: "Email", url: "mailto:eyimofepinnick@gmail.com", icon: "email" },
