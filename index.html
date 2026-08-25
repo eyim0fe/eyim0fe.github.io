@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eyimofe Pinnick — Product Manager & Builder</title>
+  <meta name="description"
+    content="Portfolio of Eyimofe Pinnick — Product Manager who codes for fun. Explore case studies, product leadership work, and software engineering projects.">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23004777'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui, -apple-system, sans-serif' font-weight='800' font-size='28' fill='%23ffffff' letter-spacing='-1.5'>EP</text><circle cx='50' cy='14' r='4.5' fill='%2338bdf8'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/variant-a.css">
+</head>
+
+<body class="va-page">
+
+  <div class="va-container va-container-wide">
+    <!-- Top Minimalist Header -->
+    <header class="va-header">
+      <div class="va-profile-summary">
+        <div>
+          <span style="font-weight: 700; color: var(--text-primary); font-size: 1.1rem;" id="profile-name">Eyimofe
+            Pinnick</span>
+          <div style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;" id="profile-title">Product
+            Manager & Builder</div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <nav class="va-links" id="profile-links-nav" aria-label="Social and professional links">
+          <!-- Injected via JS -->
+        </nav>
+        <button id="theme-toggle-btn" class="theme-switch" role="switch" aria-checked="false"
+          aria-label="Toggle dark mode" title="Toggle light/dark mode">
+          <span class="theme-switch-thumb">
+            <svg class="theme-switch-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="theme-switch-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Split Hero Section (Option 3: Side-by-Side Portrait Card) -->
+    <section class="va-bio-block">
+      <div class="va-bio-text-wrap">
+        <h1
+          style="font-size: 2.3rem; font-weight: 800; color: var(--text-primary); line-height: 1.2; letter-spacing: -0.025em;">
+          Product Manager who also codes for fun.
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;" id="profile-bio">
+          I sit at the intersection of product strategy, user discovery, and software engineering. I take ambiguous
+          problems from 0 to 1 and build frontend & full-stack apps on weekends.
+        </p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: -4px;" id="profile-location">
+          Based in Lagos 🇳🇬 & Remote
+        </p>
+      </div>
+
+      <!-- Portrait Card -->
+      <div class="hero-portrait-card">
+        <img src="" id="hero-portrait-img" alt="Eyimofe Pinnick Profile Photo" />
+      </div>
+    </section>
+
+    <!-- Projects Section with Filter Tabs & Featured Flagship -->
+    <section aria-labelledby="work-heading">
+      <div class="va-section-header">
+        <span class="va-section-title" id="work-heading">Selected Work</span>
+
+        <!-- Role Filter Tabs -->
+        <div class="va-filter-tabs" id="role-filter-tabs" role="tablist" aria-label="Filter projects by role">
+          <button class="va-filter-tab active" data-role="all" role="tab" aria-selected="true">All</button>
+          <button class="va-filter-tab" data-role="pm" role="tab" aria-selected="false">Product Manager</button>
+          <button class="va-filter-tab" data-role="engineer" role="tab" aria-selected="false">Engineer</button>
+        </div>
+      </div>
+
+      <!-- Featured Flagship Project Highlight -->
+      <div id="flagship-project-container"></div>
+
+      <!-- 2-Column Curated Grid for Remaining Projects -->
+      <div class="va-grid-2col" id="projects-grid-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="va-footer">
+      <span>© 2026 Eyimofe Pinnick · All rights reserved</span>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/case-study.js"></script>
+  <script>
+    // Theme Controller (Option 3: Soft Slate & Ice Blue)
+    const themeToggleBtn = document.getElementById("theme-toggle-btn");
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'true');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'false');
+      }
+      localStorage.setItem('portfolio-theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('portfolio-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(savedTheme);
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        applyTheme(isDark ? 'light' : 'dark');
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = window.PORTFOLIO_DATA;
+      if (!data) return;
+
+      // Render Profile Info
+      const portraitImg = document.getElementById("hero-portrait-img");
+      if (portraitImg) portraitImg.src = data.profile.avatar;
+      document.getElementById("profile-name").textContent = data.profile.name;
+      document.getElementById("profile-title").textContent = data.profile.title;
+      document.getElementById("profile-bio").textContent = data.profile.shortBio;
+      const statusEl = document.getElementById("profile-status");
+      if (statusEl) statusEl.textContent = data.profile.status;
+      const locEl = document.getElementById("profile-location");
+      if (locEl) locEl.textContent = `Based in ${data.profile.location}`;
+
+      // Render Social / Contact Links
+      const linksNav = document.getElementById("profile-links-nav");
+      linksNav.innerHTML = data.profile.socials.map(s => `
+        <a href="${s.url}" target="_blank" rel="noopener noreferrer">
+          ${s.name} ${s.isResume ? '↗' : ''}
+        </a>
+      `).join('');
+
+      // Render Projects Function
+      function renderProjects(role = 'all') {
+        const filtered = role === 'all'
+          ? data.projects
+          : data.projects.filter(p => p.roleType === role || p.roleType === 'both');
+
+        const flagshipContainer = document.getElementById("flagship-project-container");
+        const gridContainer = document.getElementById("projects-grid-container");
+
+        if (filtered.length === 0) {
+          flagshipContainer.innerHTML = '';
+          gridContainer.innerHTML = '<p style="color: var(--text-muted); grid-column: span 2; padding: 20px 0;">No projects found for this category.</p>';
+          return;
+        }
+
+        // 1. Featured Flagship Project (Top Card)
+        const flagship = filtered[0];
+        const flagBadgeClass = flagship.roleType === 'pm' ? 'badge-pm' : (flagship.roleType === 'engineer' ? 'badge-eng' : 'badge-both');
+        const flagImgCount = flagship.images && flagship.images.length > 1 ? `<span class="card-img-count-badge">📷 ${flagship.images.length}</span>` : '';
+        const flagIsWip = flagship.inProgress || flagship.status === 'in-progress' || flagship.status === 'In Progress';
+        const flagWipBadge = flagIsWip ? `<span class="badge badge-wip"><span class="wip-dot"></span>In Progress</span>` : '';
+        const flagIsMobile = flagship.isMobile || flagship.device === 'mobile' || flagship.aspect === 'portrait';
+        const flagCardClick = flagship.hasCaseStudy
+          ? `window.openCaseStudy('${flagship.id}')`
+          : (flagship.liveUrl ? `window.open('${flagship.liveUrl}', '_blank')` : '');
+
+        let flagActionsHTML = '';
+        if (flagship.hasCaseStudy) {
+          flagActionsHTML += `<button class="btn-primary btn-sm" onclick="window.openCaseStudy('${flagship.id}')">Read Full Case Study →</button>`;
+        }
+        if (flagship.hasLiveDemo && flagship.liveUrl) {
+          const btnStyle = flagship.hasCaseStudy ? 'btn-outline' : 'btn-primary';
+          flagActionsHTML += `<a href="${flagship.liveUrl}" target="_blank" rel="noopener noreferrer" class="${btnStyle} btn-sm">Live Demo ↗</a>`;
+        }
+
+        flagshipContainer.innerHTML = `
+          <div class="va-featured-card" onclick="${flagCardClick}" tabindex="0" role="button" aria-label="Open ${flagship.title}">
+            <div class="va-featured-img card-media-wrap ${flagIsMobile ? 'is-mobile-media' : ''}">
+              <img src="${flagship.image}" alt="${flagship.title} Interface Preview" />
+              ${flagImgCount}
+            </div>
+            <div class="va-featured-content">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span class="badge ${flagBadgeClass}">${flagship.roleLabel}</span>
+                  ${flagWipBadge}
+                </div>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.05em;">★ Featured Project</span>
+              </div>
+              <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-900); line-height: 1.3;">${flagship.title}</h2>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">${flagship.tagline}</p>
+              <div class="va-tags-row">
+                ${flagship.stack.map(s => `<span class="badge badge-tech">${s}</span>`).join('')}
+              </div>
+              <div class="va-card-actions" onclick="event.stopPropagation();" style="margin-top: 8px;">
+                ${flagActionsHTML}
+              </div>
+            </div>
+          </div>
+        `;
+
+        // 2. Remaining Projects in 2-Column Curated Grid
+        const remaining = filtered.slice(1);
+        gridContainer.innerHTML = remaining.map(p => {
+          const badgeClass = p.roleType === 'pm' ? 'badge-pm' : (p.roleType === 'engineer' ? 'badge-eng' : 'badge-both');
+          const imgCount = p.images && p.images.length > 1 ? `<span class="card-img-count-badge">📷 ${p.images.length}</span>` : '';
+          const isWip = p.inProgress || p.status === 'in-progress' || p.status === 'In Progress';
+          const wipBadge = isWip ? `<span class="badge badge-wip"><span class="wip-dot"></span>In Progress</span>` : '';
+          const isMobile = p.isMobile || p.device === 'mobile' || p.aspect === 'portrait';
+          const cardClick = p.hasCaseStudy
+            ? `window.openCaseStudy('${p.id}')`
+            : (p.liveUrl ? `window.open('${p.liveUrl}', '_blank')` : '');
+
+          let actionsHTML = '';
+          if (p.hasCaseStudy) {
+            actionsHTML += `<button class="va-action-link" onclick="window.openCaseStudy('${p.id}')">View Case Study →</button>`;
+          }
+          if (p.hasLiveDemo && p.liveUrl) {
+            actionsHTML += `<a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="va-action-link" style="color: var(--text-muted); margin-left: ${p.hasCaseStudy ? '10px' : '0'};">Live Demo ↗</a>`;
+          }
+
+          return `
+            <div class="va-card" onclick="${cardClick}" tabindex="0" role="button" aria-label="Open ${p.title}">
+              <div class="va-card-img-wrap card-media-wrap ${isMobile ? 'is-mobile-media' : ''}">
+                <img src="${p.image}" alt="${p.title} Interface Preview" />
+                ${imgCount}
+              </div>
+              <div class="va-card-info">
+                <div class="va-card-title-row">
+                  <div class="va-card-title">
+                    <span>${p.title}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge ${badgeClass}">${p.roleLabel}</span>
+                    ${wipBadge}
+                  </div>
+                </div>
+                <p class="va-card-desc">${p.tagline}</p>
+                <div class="va-tags-row">
+                  ${p.stack.slice(0, 3).map(s => `<span class="badge badge-tech">${s}</span>`).join('')}
+                </div>
+                <div class="va-card-actions" onclick="event.stopPropagation();">
+                  ${actionsHTML}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Initial Render
+      renderProjects('all');
+
+      // Filter Tabs Event Listeners
+      const filterTabs = document.querySelectorAll('.va-filter-tab');
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          renderProjects(tab.dataset.role);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
